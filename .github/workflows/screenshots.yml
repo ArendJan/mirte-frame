@@ -11,9 +11,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: install freecad
-        run: |
-          sudo ./install.sh
+      # - name: install freecad
+      #   run: |
+      #     sudo ./install.sh
     
       - name: Run FreeCAD
         run: |
