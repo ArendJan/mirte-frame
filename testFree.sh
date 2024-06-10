@@ -19,14 +19,11 @@ echo $DISPLAY
 export QTWEBENGINE_DISABLE_SANDBOX=1
 $TEST || Xvfb ${DISPLAY} -screen 0 1920x1080x24 &
 XPID=$!
-
 freecad -M ./scripts/RenderSteps &
 FreecadPID=$!
 sleep 20
 echo $SECONDS
 xwd -root -silent | convert xwd:- png:/tmp/screenshot.png
-
-sleep 20
 
 $TEST || kill $XPID
 kill $FreecadPID
