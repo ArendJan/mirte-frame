@@ -17,6 +17,7 @@ jobs:
     
       - name: Run FreeCAD
         run: |
+            apt-get install python3-pyqt5 
             mkdir /tmp/mirte-frame
             cp -r ./freecadFiles /tmp/mirte-frame
             cp -r testFree.sh /tmp/mirte-frame
