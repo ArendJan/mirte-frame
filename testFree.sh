@@ -19,7 +19,7 @@ $TEST || XPID=$!
 
 freecad &
 FreecadPID=$!
-sleep 10
+sleep 200
 echo $SECONDS
 xwd -root -silent | convert xwd:- png:/tmp/screenshot.png
 
