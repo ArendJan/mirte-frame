@@ -1,0 +1,44 @@
+name: Export files
+
+on:
+  [push]
+
+jobs:
+  screenshots:
+    # container: test_free
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: install freecad
+        run: |
+          ./install.sh
+    
+      - name: Run FreeCAD
+        run: |
+            mkdir /tmp/mirte-frame
+            cp -r ./freecadFiles /tmp/mirte-frame
+            cp -r testFree.sh /tmp/mirte-frame
+            cp -r ./scripts /tmp/mirte-frame
+            cp ./bill_of_materials.md /tmp/mirte-frame
+            cd /tmp/mirte-frame
+            ./testFree.sh
+
+
+      - name: Upload img
+        uses: actions/upload-artifact@v3
+        with:
+          name: dxfs
+          path: /tmp/screenshot.png
+      
+      - name: Push to release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+            files: |
+              /tmp/mirte-frame-dxf.zip
+              /tmp/mirte-frame-stl.zip
+              /tmp/mirte-frame-step.zip
+              /tmp/mirte-frame/bill_of_materials.md
+
