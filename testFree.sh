@@ -3,23 +3,26 @@
 # sudo apt-get update
 # sudo apt-get install freecad xvfb  -y
 # setup: copy files to ~/.local/share/FreeCAD/Mod
-mkdir -p ~/.local/share/FreeCAD/
-cp -r ./scripts/RenderSteps ~/.local/share/FreeCAD/Mod || true
-
+set -xe
+freecadcmd --version
+# cp -r ./scripts/RenderSteps ~/.local/share/FreeCAD/Mod || true
+ls ~
+ls -al ~
 TEST=false
 $TEST && mkdir /tmp/mirte-frame
 $TEST && cp -r ./freecadFiles /tmp/mirte-frame/
-$TEST || export DISPLAY=:1
+$TEST || export DISPLAY=:123
 echo $DISPLAY
 # export LIBGL_ALWAYS_SOFTWARE=1
 # export LIBGL_ALWAYS_INDIRECT=0
 # export LP_NO_RAST="false"
+export QTWEBENGINE_DISABLE_SANDBOX=1
 $TEST || Xvfb ${DISPLAY} -screen 0 1920x1080x24 &
-$TEST || XPID=$!
+XPID=$!
 
-freecad &
+freecad -M ./scripts/RenderSteps &
 FreecadPID=$!
-sleep 200
+sleep 20
 echo $SECONDS
 xwd -root -silent | convert xwd:- png:/tmp/screenshot.png
 
