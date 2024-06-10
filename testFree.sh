@@ -6,7 +6,7 @@
 mkdir -p ~/.local/share/FreeCAD/
 cp -r ./scripts/RenderSteps ~/.local/share/FreeCAD/Mod || true
 
-TEST=true
+TEST=false
 $TEST && mkdir /tmp/mirte-frame
 $TEST && cp -r ./freecadFiles /tmp/mirte-frame/
 $TEST || export DISPLAY=:1
