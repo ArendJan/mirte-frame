@@ -1,4 +1,4 @@
-name: Export files
+name: render steps
 
 on:
   [push]
@@ -13,7 +13,7 @@ jobs:
 
       - name: install freecad
         run: |
-          ./install.sh
+          sudo ./install.sh
     
       - name: Run FreeCAD
         run: |
