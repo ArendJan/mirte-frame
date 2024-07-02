@@ -6,11 +6,9 @@
 set -xe
 freecadcmd --version
 # cp -r ./scripts/RenderSteps ~/.local/share/FreeCAD/Mod || true
-ls ~
-ls -al ~
 TEST=false
-$TEST && mkdir /tmp/mirte-frame
-$TEST && cp -r ./freecadFiles /tmp/mirte-frame/
+$TEST && mkdir /tmp/mirte-frame || true
+$TEST && cp -r ./ /tmp/mirte-frame/ || true
 $TEST || export DISPLAY=:123
 echo $DISPLAY
 # export LIBGL_ALWAYS_SOFTWARE=1

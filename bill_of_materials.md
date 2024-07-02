@@ -24,4 +24,4 @@ number of lines for lasercutting.
 Attachments:
 ============
 
-The attachments can be used together witht the MIRTE Pioneer. 
+The attachments can be used together with the MIRTE Pioneer. 

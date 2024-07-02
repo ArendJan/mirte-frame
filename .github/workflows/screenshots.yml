@@ -17,13 +17,20 @@ jobs:
     
       - name: Run FreeCAD
         run: |
-            apt-get install python3-pyqt5  -y
+            apt update
+            apt install python3-pyqt5 python3-pip git wget -y
+            pip3 install git+https://github.com/arendjan/freecad-build-instruction-generator.git@fix-mkdir
+            cd scripts/build_instructions/
+            rm -rf warnings
+            git clone https://github.com/mklomp/mirte-release.git warnings
+            cd ../../
+            wget https://mirte.arend-jan.com/files/test/steps.zip #TODO: change to latest version
+            mkdir build/step -p
+            unzip steps.zip -d build/step
             mkdir /tmp/mirte-frame
-            cp -r ./freecadFiles /tmp/mirte-frame
-            cp -r testFree.sh /tmp/mirte-frame
-            cp -r ./scripts /tmp/mirte-frame
-            cp ./bill_of_materials.md /tmp/mirte-frame
+            cp -r ./ /tmp/mirte-frame
             cd /tmp/mirte-frame
+            ls
             ./testFree.sh
 
 
