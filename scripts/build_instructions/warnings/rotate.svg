@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="rotate.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.044512061"
+     inkscape:cx="404.38478"
+     inkscape:cy="325.7544"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="-6627.4172"
+       y="-3280.0099"
+       width="381.91896"
+       height="381.91896"
+       id="rect9850" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:20.1124;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1370"
+       width="1470.8876"
+       height="1471.5046"
+       x="-1332.1875"
+       y="402.53943"
+       inkscape:export-filename="C:\Users\martinklomp\Desktop\mirte_git\mirte-release\mirte-rotate.png"
+       inkscape:export-xdpi="11.870125"
+       inkscape:export-ydpi="11.870125" />
+    <text
+       xml:space="preserve"
+       style="font-size:50.8px;line-height:1.25;font-family:sans-serif;white-space:pre;inline-size:0;stroke-width:0.264583"
+       x="-594.40814"
+       y="1266.0894"
+       id="text2986"
+       inkscape:export-filename="C:\Users\martinklomp\Desktop\mirte_git\mirte-release\mirte-rotate.png"
+       inkscape:export-xdpi="11.870125"
+       inkscape:export-ydpi="11.870125"><tspan
+         id="tspan2984"
+         style="stroke-width:0.264583"
+         x="-594.40814"
+         y="1266.0894" /></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text9848"
+       style="font-size:755.906px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect9850)"
+       inkscape:export-filename="C:\Users\martinklomp\Desktop\mirte_git\mirte-release\mirte-rotate.png"
+       inkscape:export-xdpi="11.870125"
+       inkscape:export-ydpi="11.870125"><tspan
+         x="-6627.418"
+         y="-2208.4558"
+         id="tspan13112"><tspan
+           dx="0 297.49036"
+           id="tspan13110">!!</tspan></tspan></text>
+    <path
+       d="m -900.20512,1021.4508 c 16.045,-45.42596 42.09225,-88.14346 78.76675,-124.60946 130.235,-130.2357 341.3205,-130.2357 471.55625,0 l 35.632,35.8405 h -104.81325 c -36.8825,0 -66.68075,29.7985 -66.68075,66.6807 0,36.88246 29.79825,66.68096 66.68075,66.68096 h 265.6805 c 0,0 0,0 0,0 h 0.83325 c 36.8825,0 66.68075,-29.7985 66.68075,-66.68096 v -266.7221 c 0,-36.88251 -29.79825,-66.68001 -66.68075,-66.68001 -36.8825,0 -66.68075,29.7975 -66.68075,66.68001 v 106.6889 l -36.466,-36.6744 c -182.32925,-182.32925 -477.80725,-182.32925 -660.13725,0 -50.8435,50.8444 -87.51798,110.6481 -110.02278,174.6196 -12.294,34.79876 6.043,72.72376 40.63353,85.01776 34.59075,12.294 72.724,-6.043 85.01775,-40.6338 z m -137.73728,180.662 c -10.4187,3.1257 -20.4207,8.752 -28.547,17.087 -8.3355,8.3355 -13.9617,18.3375 -16.879,29.173 -0.6222,2.5005 -1.2497,5.2097 -1.6665,7.918 -0.6222,3.5425 -0.834,7.085 -0.834,10.6275 v 265.8882 c 0,36.8825 29.7983,66.6808 66.6808,66.6808 36.88248,0 66.68073,-29.7983 66.68073,-66.6808 v -106.4802 l 36.67375,36.4657 v 0 c 182.33,182.1213 477.808,182.1213 659.9295,0 50.8435,-50.8435 87.726,-110.6482 110.23075,-174.411 12.2945,-34.7985 -6.043,-72.7237 -40.633,-85.0177 -34.5905,-12.2938 -72.72375,6.043 -85.0175,40.6337 -16.04525,45.426 -42.09225,88.1428 -78.76675,124.6093 -130.23575,130.235 -341.32075,130.235 -471.5565,0 l -0.205,-0.2125 -35.63175,-35.6328 h 105.02175 c 36.8825,0 66.68,-29.7975 66.68,-66.68 0,-36.8832 -29.7975,-66.6807 -66.68,-66.6807 h -265.88898 c -3.3338,0 -6.6675,0.205 -10.002,0.6222 -3.3338,0.4173 -6.4598,1.041 -9.5855,2.083 z"
+       id="path13090"
+       style="stroke-width:2.08376"
+       inkscape:export-filename="C:\Users\martinklomp\Desktop\mirte_git\mirte-release\mirte-rotate.png"
+       inkscape:export-xdpi="11.870125"
+       inkscape:export-ydpi="11.870125" />
+  </g>
+</svg>
