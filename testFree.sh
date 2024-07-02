@@ -3,6 +3,20 @@
 # sudo apt-get update
 # sudo apt-get install freecad xvfb  -y
 # setup: copy files to ~/.local/share/FreeCAD/Mod
+
+mirte=$1
+type=$2
+# if not defined, set to default
+mirte=${mirte:-"pioneer"}
+type=${type:-"pcb"}
+
+cat <<EOF > /tmp/mirte-frame/config.json
+{
+  "mirte": "$mirte",
+  "type": "$type"
+}
+EOF
+
 set -xe
 freecadcmd --version
 # cp -r ./scripts/RenderSteps ~/.local/share/FreeCAD/Mod || true
@@ -19,7 +33,7 @@ $TEST || Xvfb ${DISPLAY} -screen 0 1920x1080x24 &
 XPID=$!
 freecad -M ./scripts/RenderSteps &
 FreecadPID=$!
-sleep 20
+sleep 40
 echo $SECONDS
 xwd -root -silent | convert xwd:- png:/tmp/screenshot.png
 

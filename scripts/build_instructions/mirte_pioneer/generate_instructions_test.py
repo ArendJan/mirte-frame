@@ -2,6 +2,8 @@ from freecad_build_instruction_generator import instruction_generator as gen
 from pathlib import Path
 import time
 import importlib
+import os
+import json
 importlib.reload(gen)
 if not '__file__' in globals():
   __file__ = "/tmp/mirte-frame/scripts/build_instructions/mirte_pioneer/generate_instructions.py"
@@ -26,7 +28,15 @@ if not '__file__' in globals():
 
 mirte = "basic"
 type = "pcb"
-  # set the path where we are running the sources
+# check if /tmp/mirte-frame/config.json exists and use that config
+if(os.path.isfile("/tmp/mirte-frame/config.json")):
+  with open("/tmp/mirte-frame/config.json") as f:
+    print('loading config from file')
+    data = json.load(f)
+    mirte = data["mirte"]
+    type = data["type"]
+
+# set the path where we are running the sources
 print("Running generate_instructions.py")
 dir_path = os.path.dirname(os.path.realpath(__file__))
 gen.setCwdPath(dir_path)

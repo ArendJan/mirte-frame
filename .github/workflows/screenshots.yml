@@ -35,13 +35,13 @@ jobs:
             cp -r ./ /tmp/mirte-frame
             cd /tmp/mirte-frame
             ls
-            ./testFree.sh
+            ./testFree.sh ${{ matrix.mirte }} ${{ matrix.type }}
 
 
       - name: Upload img
         uses: actions/upload-artifact@v4
         with:
-          name: build_instructions
+          name: build_instructions_${{ matrix.mirte }}_${{ matrix.type }}
           path: /tmp/mirte-frame/scripts/build_instructions/mirte_pioneer/build
       
       - name: Push to release
