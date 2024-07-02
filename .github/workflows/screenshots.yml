@@ -5,6 +5,10 @@ on:
 
 jobs:
   screenshots:
+    strategy:
+      matrix:
+        mirte: [pioneer, basic]
+        type: [pcb, breadboard]
     container: ghcr.io/arendjan/mirte-frame:renderworkflow
     runs-on: ubuntu-latest
     steps:
