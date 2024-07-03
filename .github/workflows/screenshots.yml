@@ -55,6 +55,7 @@ jobs:
       - if: startsWith(github.ref, 'refs/tags/')
         name: zip files
         run: |
+          sudo apt install zip -y
           cd /tmp/mirte-frame/scripts/build_instructions/mirte_pioneer
           zip -r ${{ matrix.mirte }}_${{ matrix.type }}.zip ./build
       - name: Push to release
