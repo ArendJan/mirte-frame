@@ -6,16 +6,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: ghcr.io/arendjan/mirte-frame:renderworkflow
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: install freecad
-        run: |
-          sudo add-apt-repository ppa:freecad-maintainers/freecad-stable -y
-          sudo apt-get update
-          sudo apt-get install freecad -y
+      # - name: install freecad
+      #   run: |
+      #     sudo add-apt-repository ppa:freecad-maintainers/freecad-stable -y
+      #     sudo apt-get update
+      #     sudo apt-get install freecad -y
     
       - name: Run FreeCAD
         run: |
