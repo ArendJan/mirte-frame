@@ -4,10 +4,10 @@ on:
   [push]
 
 jobs:  
-  shellcheck:
+  build_dxfs:
     uses: ./.github/workflows/dxfExport.yml
   screenshots:
-    
+    needs: [build_dxfs]
     strategy:
       matrix:
         mirte: [pioneer, basic]
@@ -34,6 +34,8 @@ jobs:
             rm -rf warnings
             git clone https://github.com/mklomp/mirte-release.git warnings
             cd ../../
+            mkdir build/step -p
+            unzip steps.zip -d build/step
             mkdir /tmp/mirte-frame
             cp -r ./ /tmp/mirte-frame
             cd /tmp/mirte-frame
