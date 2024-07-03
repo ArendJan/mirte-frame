@@ -24,7 +24,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: steps
-          path: $GITHUB_WORKSPACE/build/step
+          path: build/step
       - name: Run FreeCAD
         run: |
             apt update
