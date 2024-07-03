@@ -3,8 +3,11 @@ name: render steps
 on:
   [push]
 
-jobs:
+jobs:  
+  shellcheck:
+    uses: ./.github/workflows/dxfExport.yml
   screenshots:
+    
     strategy:
       matrix:
         mirte: [pioneer, basic]
@@ -14,23 +17,23 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      # - name: install freecad
-      #   run: |
-      #     sudo ./install.sh
-    
+      - name: mkdir
+        run: |
+          mkdir -p build/step
+      - name: download step files
+        uses: actions/download-artifact@v4
+        with:
+          name: steps
+          path: $GITHUB_WORKSPACE/build/step
       - name: Run FreeCAD
         run: |
             apt update
             apt install python3-pyqt5 python3-pip git wget -y
-            pip3 install git+https://github.com/arendjan/freecad-build-instruction-generator.git@fix-mkdir
+            pip3 install git+https://github.com/mirte-robot/freecad-build-instruction-generator.git
             cd scripts/build_instructions/
             rm -rf warnings
             git clone https://github.com/mklomp/mirte-release.git warnings
             cd ../../
-            wget https://mirte.arend-jan.com/files/test/steps.zip #TODO: change to latest version
-            mkdir build/step -p
-            unzip steps.zip -d build/step
             mkdir /tmp/mirte-frame
             cp -r ./ /tmp/mirte-frame
             cd /tmp/mirte-frame
