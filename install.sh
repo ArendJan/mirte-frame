@@ -6,7 +6,7 @@ apt-get update
 apt-get install freecad xvfb  -y
 apt install x11-apps -y
 apt-get install graphicsmagick-imagemagick-compat -y
-apt install curl unzip -y
+apt install curl unzip zip -y
 curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
 chmod +x nodesource_setup.sh
 ./nodesource_setup.sh

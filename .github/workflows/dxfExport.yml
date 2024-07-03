@@ -44,7 +44,6 @@ jobs:
       - name: zip files
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          apt install zip -y
           cd /tmp/mirte-frame/build
           zip -r /tmp/mirte-frame-stl.zip ./stl/*
           zip -r /tmp/mirte-frame-dxf.zip ./dxf/*
