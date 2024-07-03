@@ -1,7 +1,13 @@
 name: render steps
 
-on:
-  [push]
+on: 
+  push:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
 
 jobs:  
   build_dxfs:
@@ -46,11 +52,15 @@ jobs:
         with:
           name: build_instructions_${{ matrix.mirte }}_${{ matrix.type }}
           path: /tmp/mirte-frame/scripts/build_instructions/mirte_pioneer/build
-      
+      - if: startsWith(github.ref, 'refs/tags/')
+        name: zip files
+        run: |
+          cd /tmp/mirte-frame/scripts/build_instructions/mirte_pioneer
+          zip -r ${{ matrix.mirte }}_${{ matrix.type }}.zip ./build
       - name: Push to release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
             files: |
-              /tmp/mirte-frame/scripts/build_instructions/mirte_pioneer/build
+              /tmp/mirte-frame/scripts/build_instructions/mirte_pioneer/${{ matrix.mirte }}_${{ matrix.type }}.zip
 

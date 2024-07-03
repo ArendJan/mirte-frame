@@ -1,7 +1,6 @@
 name: Export files
 
 on:
-  - push
   - workflow_call
 
 jobs:
