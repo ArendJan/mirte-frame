@@ -57,7 +57,6 @@ jobs:
         run: |
           cd /tmp/mirte-frame/scripts/build_instructions/mirte_pioneer/build
           zip -r ${{ matrix.mirte }}_${{ matrix.type }}.zip ./
-            - name: Upload img
       - name: upload release
         uses: actions/upload-artifact@v4
         with:
