@@ -60,7 +60,7 @@ jobs:
       - name: upload release
         uses: actions/upload-artifact@v4
         with:
-          name: build_instructions_${{ matrix.mirte }}_${{ matrix.type }}
+          name: build_instructions_${{ matrix.mirte }}_${{ matrix.type }}_release
           path: /tmp/mirte-frame/scripts/build_instructions/mirte_pioneer/build/${{ matrix.mirte }}_${{ matrix.type }}.zip
       - name: Push to release
         uses: softprops/action-gh-release@v2
