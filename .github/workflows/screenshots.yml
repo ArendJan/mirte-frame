@@ -15,6 +15,7 @@ jobs:
   screenshots:
     needs: [build_dxfs]
     strategy:
+      fail-fast: false
       matrix:
         mirte: [pioneer, basic]
         type: [pcb, breadboard]
@@ -56,12 +57,7 @@ jobs:
         # if: startsWith(github.ref, 'refs/tags/')
         run: |
           cd /tmp/mirte-frame/scripts/build_instructions/mirte_pioneer/build/${{ matrix.mirte }}
-          zip -r ${{ matrix.mirte }}_${{ matrix.type }}.zip ./ || touch ${{ matrix.mirte }}_${{ matrix.type }}.zip || true
-      - name: upload release
-        uses: actions/upload-artifact@v4
-        with:
-          name: build_instructions_${{ matrix.mirte }}_${{ matrix.type }}_release
-          path: /tmp/mirte-frame/scripts/build_instructions/mirte_pioneer/build/${{ matrix.mirte }}/${{ matrix.mirte }}_${{ matrix.type }}.zip
+          zip -r ${{ matrix.mirte }}_${{ matrix.type }}.zip ./
       - name: Push to release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
